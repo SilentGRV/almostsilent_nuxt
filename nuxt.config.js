@@ -17,20 +17,19 @@ module.exports = {
       ["bootstrap-vue/nuxt", { css: false }],
 
       // Simple usage
-      "@nuxtjs/bootstrap-vue",
+      // "@nuxtjs/bootstrap-vue",
 
       // With options
       ["@nuxtjs/bootstrap-vue", { css: false }],
       "@nuxtjs/font-awesome",
       // Simple usage
       "nuxt-netlify-cms",
-
       // With options
-      ["nuxt-netlify-cms", { adminPath: "secure" }]
+      ["nuxt-netlify-cms", { adminPath: "admin" }]
     ],
     // You can optionally use global options instead of inline form
     netlifyCms: {
-      adminPath: "secure"
+      adminPath: "admin"
     }
   },
 
