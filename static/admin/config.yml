@@ -1,7 +1,7 @@
 # backend:
-#   name: github
-#   repo: /SilentGRV/almostsilent_nuxt.git
-#   branch: master
+# name: github
+# repo: /SilentGRV/almostsilent_nuxt.git
+
 #
 # publish_mode: editorial_workflow
 #
@@ -9,30 +9,52 @@
 # public_folder: "/images/uploads"
 #
 # collections:
-#   - name: "post"
-#     label: "Post"
-#     folder: "content/posts"
-#     create: true
-#     slug: "{{slug}}"
-#     fields:
-#       - {label: "Title", name: "title", widget: "string"}
-#       - {label: "Descreption", name: "description", widget: "text"}
-#       - {label: "Publish Date", name: "date", widget: "datetime"}
-#       - {label: "Featured Image", name: "thumbnail", widget: "image"}
-#       - {label: "Category", name: "categories", widget: "list", required: false}
-#       - {label: "Tags", name: "tags", widget: "list", required: false}
-#       - {label: "Body", name: "body", widget: "markdown"}
+
 
 backend:
   name: test-repo
-
-media_folder: media_folder
+  # repo: /SilentGRV/almostsilent_nuxt.git
+  branch: master
+media_folder: "static/images/uploads"
 
 collections:
-  - name: post
-    label: Post
-    folder: posts
+  - name: "post"
+    label: "Post"
+    folder: "content/posts"
     create: true
+    slug: "{{slug}}"
     fields:
-      - {name: title, label: Title}
-      - {name: body, label: Body, widget: markdown}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Descreption", name: "description", widget: "text"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Category", name: "categories", widget: "list", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: food
+    label: "Food Item" # Used in the UI, ie.: "New Post"
+    folder: "site/content/food" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Name of Item", name: "title", widget: "string"}
+      - {label: "Supported Meals", name: "categories", widget: "list", default: ["lunch", "dinner"]}
+      - {label: "Ingredients/Description", name: "description", widget: "text"}
+      - {label: "Type of Food", name: "type", widget: "string", default: "raw bar"}
+      - {label: "Price", name: "price", widget: "string"}
+  - name: drinks
+    label: "Drink Item" # Used in the UI, ie.: "New Post"
+    folder: "site/content/drinks" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Name of Drink", name: "title", widget: "string"}
+      - {label: "Drink Marker", name: "categories", widget: "hidden", default: ["drinks"]}
+      - {label: "Ingredients/Description", name: "description", widget: "text"}
+      - {label: "Type of Drink", name: "type", widget: "string", default: "beer"}
+      - {label: "Price", name: "price", widget: "string"}
+  - name: gallery
+    label: "Gallery Image" # Used in the UI, ie.: "New Post"
+    folder: "site/content/gallery" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Gallery Image", name: "image", widget: "image"}

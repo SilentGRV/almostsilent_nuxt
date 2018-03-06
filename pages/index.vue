@@ -1,12 +1,16 @@
 <template>
   <section class="container">
     <div>
+      <!-- <nav>
+        <li>Home</li>
+        <li>Works</li>
+      </nav> -->
       <app-logo/>
       <h1 class="title">
         Almost Silent
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        Subliminal Reflection
       </h2>
       <div class="links">
         <a
